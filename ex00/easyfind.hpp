@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:02:01 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 15:51:05 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 16:02:30 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 # include <string>
 # include <iomanip>
 # include <vector>
-# include <map>
+# include <deque>
 # include <list>
-# include <stack>
 # include <iterator>
 # include <algorithm>  
 
@@ -27,6 +26,8 @@
 #define GRN "\033[0;32m"
 #define WHT "\033[0;0m"
 #define RED "\033[0;31m"
+
+#define N 100
 
 
 //Exception not found 

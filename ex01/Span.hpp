@@ -1,72 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:02:01 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 15:51:05 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:54:19 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#   ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#   ifndef SPAN_HPP
+# define SPAN_HPP
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <vector>
-# include <map>
-# include <list>
-# include <stack>
-# include <iterator>
-# include <algorithm>  
+#include "Span.h"
 
-
-#define GRN "\033[0;32m"
-#define WHT "\033[0;0m"
-#define RED "\033[0;31m"
-
-
-//Exception not found 
-
-class NotFound: public std::exception
+class Span
 {
+    private:
+        std::size_t        _size;
+        std::vector<int>    _tab;
+        Span();
     public:
-        const char* what(void) const throw() {return "Élément non trouvé dans votre conteneur";};
+        Span(std::size_t n);
+        ~Span();
+        Span(Span const & ob);
+        Span & operator=(Span const & ob);
+        
+        void                addNumber(int n);
+        int                 shortestSpan();
+        int                 longestSpan();
+        
+        unsigned int        getSize() const ;
+        std::vector<int>    getTab() const ;
+        std::vector<int>    getDistnace() const;
+        class   AddElement : public std::exception
+        {
+            public :
+                const char * what() const throw ();
+        };
+
+        class   SizeLimit : public std::exception
+        {
+            public :
+                const char * what() const throw ();
+        };
+
+        class   DistanceException : public std::exception
+        {
+            public:
+                const char * what() const throw();
+        };
 };
-
-//Template of easyfind
-template <typename C>
-int easyfind(C a, int e)
-{
-    typename C::iterator b = a.begin();
-    typename C::iterator en = a.end();
-    typename C::iterator it = std::find(b, en, e);
-    if (it == en)
-        throw (::NotFound());
-    return std::distance(b, it);
-}
-
-
-//Template test
-
-template <typename C>
-void test(C a, int b, int i)
-{
-    std::cout << GRN << std::setfill('*') << std::setw(46);
-    std::cout << "Test: " << i << std::setfill('*') << std::setw(46) << WHT << std::endl;
-    try
-    {
-        ::easyfind(a, b);
-        std::cout << "L'élément '" << b << "' est trouvé dans votre conteneur a la position " 
-        << ::easyfind(a, b) + 1 << std::endl << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << RED << b << " : " << e.what() << WHT << std::endl << std::endl;
-    }
-}
 
 # endif

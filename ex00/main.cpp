@@ -6,12 +6,11 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:09:39 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 15:51:31 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 16:02:25 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
-#define N 100
 
 int main(void) 
 {

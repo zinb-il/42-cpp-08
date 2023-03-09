@@ -6,35 +6,51 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:09:39 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 15:51:31 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 18:03:52 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
-#define N 100
+#include "Span.h"
 
 int main(void) 
 {
-
-    int nb[N];
-    
-    for (size_t i = 0; i < N; i++)
+    try
     {
-        nb[i] = N - i;
-    }
-    
-    
-    std::vector<int> vec(nb, nb + (sizeof(nb) / sizeof(int)));
-    std::deque<int> deq(nb, nb + (sizeof(nb) / sizeof(int)));
-    std::list<int> lst(nb, nb + (sizeof(nb) / sizeof(int)));
+        // Span sp = Span(5);
+        // Span sp1 = Span(0);
+        // Span sp2 = Span(1);
+        Span sp3(100000);
+        Span sp4(sp3);
 
-    test(vec, 11, 1);
-    test(deq, 2, 2);
-    test(lst, 8, 3);
-    
-    test(vec, N + 1, 4);
-    test(deq, 'z', 5);
-    test(lst, N + 2, 6);
+
+        //Normal Test
+        // sp.addNumber(5);
+        // sp.addNumber(3);
+        // sp.addNumber(17);
+        // sp.addNumber(9);
+        // sp.addNumber(11);
+        // std::cout << sp.shortestSpan() << std::endl;
+        // std::cout << sp.longestSpan() << std::endl;
+        
+        //Empty Span
+        // sp1.addNumber(0);
+
+        // //One element Span
+        // sp2.addNumber(1);
+        // std::cout << sp2.shortestSpan() << std::endl;
+
+        //The N ellemt test
+        for(int i = 0; i < N; i++)
+        {
+            sp4.addNumber(N - i);
+        }
+        std::cout << sp4.shortestSpan() << std::endl;
+        std::cout << sp4.longestSpan() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     
     return 0;
 }
