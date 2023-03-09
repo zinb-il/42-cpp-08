@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:11:02 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 17:57:19 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:34:46 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,24 @@ int s_abs(int n){return std::abs(n);}
 
 Span::Span()
 {
-    //std::cout << "Span Default constructor called" << std::endl;
+    // std::cout << "Span Default constructor called" << std::endl;
 }
 
 Span::Span(std::size_t n):_size(n)
 {
-    //std::cout << "Span Parameter constroctur called" << std::endl;
+    // std::cout << "Span Parameter constroctur called" << std::endl;
+    _tab.reserve(n);
 }
 
 Span::Span(Span const & ob)
 {
-    //std::cout << "Span Copy constroctur called" << std::endl;
+    // std::cout << "Span Copy constroctur called" << std::endl;
     *this = ob;
 }
 
 Span::~Span()
 {
-    //std::cout << "Span Destructor called" << std::endl;
+    // std::cout << "Span Destructor called" << std::endl;
 }
 
 /********************************************************************/
@@ -50,9 +51,9 @@ Span::~Span()
 
 Span & Span::operator=(Span const & ob)
 {
+    // std::cout << "Span Copy assignment operator called" << std::endl;
     if (ob.getSize() > _size)
         throw Span::SizeLimit();
-    //std::cout << "Span Copy assignment operator called" << std::endl;
     _size = ob.getSize();
     _tab = ob.getTab();
     return *this;
@@ -121,6 +122,13 @@ void    Span::addNumber(int n)
     if (_tab.size() >= _size)
         throw Span::AddElement();
     _tab.push_back(n);
+}
+void    Span::addRange(std::vector<int>::iterator b, std::vector<int>::iterator e)
+{
+    if (static_cast<size_t>(std::distance(b , e)) > _size)
+        throw Span::AddElement();
+    while(b != e)
+        _tab.push_back(*b++);
 }
 
 int Span::shortestSpan()

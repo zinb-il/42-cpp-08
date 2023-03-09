@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:13:03 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 17:52:00 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:24:49 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <iterator>
 # include <algorithm>
 # include <numeric>
+#include  <utility>
 # include "Span.hpp"
 
 
