@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:13:03 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 19:24:49 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:54:48 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 #define WHT "\033[0;0m"
 #define RED "\033[0;31m"
 
-#define N 10000
+#define N 100
 
 int s_abs(int n);
 

@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:11:02 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 19:34:46 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:44:47 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ std::vector<int>    Span::getTab() const
 
 const char * Span::AddElement::what() const throw ()
 {
-    return "Votre list est complete";
+    return "Votre list est full";
 }
 
 const char * Span::DistanceException::what() const throw ()
@@ -123,9 +123,9 @@ void    Span::addNumber(int n)
         throw Span::AddElement();
     _tab.push_back(n);
 }
-void    Span::addRange(std::vector<int>::iterator b, std::vector<int>::iterator e)
+void    Span::addRange(it b, it e)
 {
-    if (static_cast<size_t>(std::distance(b , e)) > _size)
+    if (static_cast<size_t>(std::distance(b , e)) > (_size - _tab.size()))
         throw Span::AddElement();
     while(b != e)
         _tab.push_back(*b++);

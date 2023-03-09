@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:02:01 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 18:52:10 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:40:54 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define SPAN_HPP
 
 #include "Span.h"
+
+typedef std::vector<int>::iterator it;
 
 class Span
 {
@@ -28,7 +30,7 @@ class Span
         Span & operator=(Span const & ob);
         
         void                addNumber(int n);
-        void                addRange(std::vector<int>::iterator b, std::vector<int>::iterator e);
+        void                addRange(it b, it e);
         int                 shortestSpan();
         int                 longestSpan();
         

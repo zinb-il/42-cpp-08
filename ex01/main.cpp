@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:09:39 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 19:37:27 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:53:03 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
     try
     {
         Span sp = Span(5);
-        // Span sp1 = Span(0);
+        //Span sp1 = Span(0);
         // Span sp2 = Span(1);
         Span sp3(N);
         Span sp4(sp3);
@@ -34,7 +34,7 @@ int main(void)
         std::cout << sp.longestSpan() << std::endl;
         
         //Empty Span
-        // sp1.addNumber(0);
+        //sp1.addNumber(0);
 
         //One element Span
         // sp2.addNumber(1);
@@ -48,6 +48,7 @@ int main(void)
         
         //The N ellemt test
         std::vector<int> b = sp4.getTab();
+        //sp5.addNumber(4);
         sp5.addRange(b.begin(),b.end());
         
         std::cout << sp5.shortestSpan() << std::endl;

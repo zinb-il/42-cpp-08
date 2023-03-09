@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:02:01 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 20:59:43 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:35:00 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void test(C a, int b, int i)
     {
         ::easyfind(a, b);
         std::cout << "L'élément '" << b << "' est trouvé dans votre conteneur a la position " 
-        << ::easyfind(a, b) + 1 << std::endl << std::endl;
+        << ::easyfind(a, b) << std::endl << std::endl;
     }
     catch(const std::exception& e)
     {

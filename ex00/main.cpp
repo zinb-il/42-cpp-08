@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:09:39 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 21:00:20 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:33:15 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ int main(void)
     test(vec, N + 1, 4);
     test(deq, 'z', 5);
     test(lst, N + 2, 6);
+
+    test(vec, N, 7);
+    test(vec, 1, 8);
     
     return 0;
 }
