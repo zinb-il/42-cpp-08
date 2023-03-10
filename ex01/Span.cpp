@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:11:02 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 22:44:47 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/10 01:38:22 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ Span::~Span()
 Span & Span::operator=(Span const & ob)
 {
     // std::cout << "Span Copy assignment operator called" << std::endl;
-    if (ob.getSize() > _size)
-        throw Span::SizeLimit();
     _size = ob.getSize();
     _tab = ob.getTab();
     return *this;
@@ -91,14 +89,8 @@ const char * Span::AddElement::what() const throw ()
 
 const char * Span::DistanceException::what() const throw ()
 {
-    return "Il n' y a pas assez d'élément pour calculer le distance";
+    return "Il n' y a pas assez d'élément pour calculer la distance";
 }
-
-const char * Span::SizeLimit::what() const throw ()
-{
-    return "Vous avez depasser les limites";
-}
-
 /********************************************************************/
 
 
@@ -110,8 +102,6 @@ const char * Span::SizeLimit::what() const throw ()
 std::vector<int>   Span::getDistnace() const
 {
     std::vector<int> dis(_tab);
-    if (_tab.size() > _size)
-        throw Span::AddElement();
     std::adjacent_difference(_tab.begin(), _tab.end(), dis.begin());
     std::transform(dis.begin(), dis.end(), dis.begin(), s_abs);
     return (dis);

@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:02:01 by ziloughm          #+#    #+#             */
-/*   Updated: 2023/03/09 22:40:54 by ziloughm         ###   ########.fr       */
+/*   Updated: 2023/03/10 01:38:00 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,6 @@ class Span
         std::vector<int>    getTab() const ;
         std::vector<int>    getDistnace() const;
         class   AddElement : public std::exception
-        {
-            public :
-                const char * what() const throw ();
-        };
-
-        class   SizeLimit : public std::exception
         {
             public :
                 const char * what() const throw ();
